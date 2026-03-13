@@ -48,7 +48,7 @@ public class MainInventario {
 
         // intentando actualizar el stock del producto eliminado
         System.out.println("Intentando actualizar el stock del producto eliminado... ");
-       // inventario.actualizarStock("Raton", 5);
+       inventario.actualizarStock("Raton", 5);
 
 
         double valorTotal2 = inventario.calcularValorTotalStock();

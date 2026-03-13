@@ -40,15 +40,19 @@ public class InventarioTienda {
         return total;
     }
 
-    // Borrar producto por nombre: pone a null la posición (sin compactar el array)
     public void eliminarProducto(String nombreProducto) {
         for (int i = 0; i < contador; i++) {
-            if (productos[i] != null &&
-                    productos[i].getNombre().equalsIgnoreCase(nombreProducto)) {
-                productos[i] = null;
-                break;
+            if (productos[i] != null && productos[i].getNombre().equalsIgnoreCase(nombreProducto)) {
+                for (int j = i; j < contador - 1; j++) {
+                    productos[j] = productos[j + 1];
+                }
+                productos[contador - 1] = null;
+                contador--;
+                System.out.println("Producto '" + nombreProducto + "' eliminado y lista compactada.");
+                return;
             }
         }
+        System.out.println("No se encontró el producto a eliminar.");
     }
 
     public void listarProductos() {
