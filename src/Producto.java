@@ -42,7 +42,7 @@ public class Producto {
     // ERROR 1 (sencillo): cálculo de precio final con descuento mal implementado
     // Debería ser: precio * (1 - descuento/100)
     public double calcularPrecioFinal() {
-        return precio - descuento; // ERROR: descuento tratado como cantidad fija
+        return precio * (1 - descuento/100); // ERROR: descuento tratado como cantidad fija
     }
 
     @Override
